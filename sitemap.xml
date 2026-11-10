@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- [PLACEHOLDER: production domain] Replace each loc with an absolute URL on the live domain before upload. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/index.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>/services.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>/prices.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>/about.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>/gallery.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>/faq.html</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>/contact.html</loc><lastmod>2026-11-10</lastmod></url>
+</urlset>

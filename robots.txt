@@ -1,0 +1,7 @@
+# [PLACEHOLDER: production domain]
+# When the domain is confirmed, set Sitemap to the full URL, for example https://example.co.za/sitemap.xml
+
+User-agent: *
+Allow: /
+
+Sitemap: /sitemap.xml
