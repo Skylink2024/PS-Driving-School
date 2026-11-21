@@ -1007,6 +1007,21 @@ body.nav-open .float-actions { visibility: hidden; }
   .header-inner { width: min(var(--wrap), calc(100% - 3rem)); }
 }
 
+@media (min-width: 1000px) {
+  .hero { align-items: center; }
+  .hero-copy { padding-top: calc(var(--header) + 1rem); padding-bottom: 3rem; }
+  .hero-copy h1 {
+    font-size: clamp(6.75rem, 9.4vw, 9.75rem);
+    line-height: 0.86;
+    letter-spacing: -0.055em;
+    max-width: 7.6ch;
+  }
+  .hero-copy .lede {
+    font-size: 1.2rem;
+    max-width: 26rem;
+  }
+}
+
 @media (min-width: 900px) {
   .nav-toggle { display: none; }
   .site-nav {
