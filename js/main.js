@@ -80,6 +80,15 @@
     });
   }
 
+  var header = document.querySelector(".site-header");
+  if (header && document.body.classList.contains("home")) {
+    var onScroll = function () {
+      header.classList.toggle("is-solid", window.scrollY > 28);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
