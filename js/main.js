@@ -57,6 +57,29 @@
     });
   });
 
+  if ("IntersectionObserver" in window) {
+    var revealItems = document.querySelectorAll(".reveal");
+    if (revealItems.length) {
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-in");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+      revealItems.forEach(function (item) {
+        revealObserver.observe(item);
+      });
+    }
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (item) {
+      item.classList.add("is-in");
+    });
+  }
+
   var form = document.getElementById("booking-form");
   if (form) {
     form.addEventListener("submit", function (event) {
