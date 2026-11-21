@@ -242,68 +242,28 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: var(--soft);
   color: var(--brand);
 }
-.hero .btn-ghost {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.55);
-  background: transparent;
-}
-.hero .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
-  color: #fff;
-}
-
-/* Hero — tall full-bleed photo */
+/* Hero — tall split: copy + clear photo */
 .hero {
   position: relative;
-  min-height: clamp(640px, 90vh, 880px);
-  display: flex;
-  align-items: flex-start;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr;
   background: #141414;
   overflow: hidden;
   padding: 0;
 }
 
-.hero-media {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  border-radius: 0;
-  overflow: hidden;
-  background: #222;
-}
-
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  min-height: clamp(640px, 90vh, 880px);
-  object-fit: cover;
-  object-position: 68% 30%;
-  transition: transform 0.8s ease;
-}
-
-.hero:hover .hero-media img {
-  transform: scale(1.03);
-}
-
-.hero-shade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(105deg, rgba(12, 12, 12, 0.72) 0%, rgba(12, 12, 12, 0.28) 46%, rgba(12, 12, 12, 0.05) 78%, transparent 100%),
-    linear-gradient(180deg, rgba(12, 12, 12, 0.12) 0%, transparent 40%, rgba(12, 12, 12, 0.35) 100%);
-  pointer-events: none;
-}
-
 .hero-copy {
-  position: relative;
+  order: 2;
   z-index: 2;
-  width: min(var(--wrap), calc(100% - 2rem));
-  margin-inline: auto;
-  padding: 3.2rem 0 3.5rem;
-  max-width: 38rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.4rem 1.35rem 2.8rem;
   color: #fff;
+  background:
+    linear-gradient(160deg, #141414 0%, #1c1214 55%, #3a0a14 100%);
+  border-top: 4px solid var(--brand);
 }
 
 .hero-copy .eyebrow {
@@ -316,8 +276,44 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 
 .hero-copy .lede {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 34rem;
+}
+
+.hero-media {
+  order: 1;
+  position: relative;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: #222;
+  min-height: clamp(280px, 46vh, 420px);
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(280px, 46vh, 420px);
+  object-fit: cover;
+  object-position: center 28%;
+  transition: transform 0.8s ease;
+}
+
+.hero:hover .hero-media img {
+  transform: scale(1.03);
+}
+
+.hero-shade { display: none; }
+
+.hero .btn-ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: transparent;
+}
+.hero .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
 }
 
 .eyebrow,
@@ -849,21 +845,15 @@ body.nav-open .float-actions { visibility: hidden; }
 @media (max-width: 699px) {
   .wrap,
   .header-inner { width: min(var(--wrap), calc(100% - 1.4rem)); }
-  .hero {
-    min-height: clamp(580px, 88vh, 780px);
-    align-items: flex-end;
+  .hero-media {
+    min-height: clamp(300px, 48vh, 440px);
   }
   .hero-media img {
-    min-height: clamp(580px, 88vh, 780px);
-    object-position: 72% 22%;
-  }
-  .hero-shade {
-    background:
-      linear-gradient(180deg, rgba(12, 12, 12, 0.15) 0%, rgba(12, 12, 12, 0.35) 40%, rgba(12, 12, 12, 0.82) 78%, rgba(154, 12, 34, 0.5) 100%);
+    min-height: clamp(300px, 48vh, 440px);
+    object-position: center 22%;
   }
   .hero-copy {
-    padding: 1.5rem 0 2.8rem;
-    align-self: end;
+    padding: 2.2rem 1.2rem 2.6rem;
   }
   .hero-actions,
   .actions,
@@ -880,11 +870,23 @@ body.nav-open .float-actions { visibility: hidden; }
 }
 
 @media (min-width: 700px) {
+  .hero {
+    grid-template-columns: minmax(320px, 0.92fr) minmax(340px, 1.18fr);
+    min-height: clamp(640px, 88vh, 860px);
+  }
   .hero-copy {
-    margin-left: max(1.5rem, calc((100% - var(--wrap)) / 2));
-    margin-right: auto;
-    width: min(40rem, calc(100% - 3rem));
-    padding: 4.5rem 0 4rem;
+    order: 1;
+    padding: 3.5rem clamp(1.5rem, 4vw, 4.5rem);
+    border-top: 0;
+    border-left: 5px solid var(--brand);
+  }
+  .hero-media {
+    order: 2;
+    min-height: 100%;
+  }
+  .hero-media img {
+    min-height: clamp(640px, 88vh, 860px);
+    object-position: center 26%;
   }
   .about-grid {
     grid-template-columns: 0.9fr 1.1fr;
