@@ -794,6 +794,16 @@ h1 {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
 }
+.pictures {
+  display: grid;
+  gap: 0.75rem;
+}
+.pictures img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--paper);
+}
 .mini-services {
   display: grid;
   gap: 0.9rem;
@@ -984,6 +994,13 @@ body.nav-open .float-actions { visibility: hidden; }
   .section { padding: 3rem 0; }
   .split .photo-frame { order: -1; }
   .gallery-grid .photo-frame figcaption { display: none; }
+  .page-hero { padding: 1.5rem 0 1.15rem; }
+  .page-hero h1 { font-size: 1.85rem; }
+  .site-footer .btn { width: 100%; }
+  .site-footer a,
+  .contact-list a { overflow-wrap: anywhere; }
+  .price-card { overflow-x: auto; }
+  .logo-text { font-size: 1rem; }
 }
 
 @media (min-width: 700px) {
@@ -999,7 +1016,8 @@ body.nav-open .float-actions { visibility: hidden; }
   .contact-grid { grid-template-columns: 0.95fr 1.05fr; }
   .price-grid { grid-template-columns: 1fr 1fr; }
   .gallery-grid,
-  .shot-row { grid-template-columns: repeat(4, 1fr); }
+  .shot-row,
+  .pictures { grid-template-columns: repeat(2, 1fr); }
   .shot-row img { height: 220px; }
   .mini-services { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1058,6 +1076,9 @@ body.nav-open .float-actions { visibility: hidden; }
     min-height: 44px;
   }
   .benefits { grid-template-columns: repeat(4, 1fr); }
+  .pictures { grid-template-columns: repeat(3, 1fr); }
+  .site-nav { gap: 0.15rem 0.75rem; }
+  .site-nav a { font-size: 0.9rem; }
   .split { grid-template-columns: 1.05fr 0.95fr; gap: 2.2rem; }
   .split.flip { grid-template-columns: 0.95fr 1.05fr; }
   .split.flip .split-copy { order: 2; }
