@@ -57,6 +57,42 @@
     });
   });
 
+  if ("IntersectionObserver" in window) {
+    var revealItems = document.querySelectorAll(".reveal");
+    if (revealItems.length) {
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-in");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+      revealItems.forEach(function (item) {
+        revealObserver.observe(item);
+      });
+    }
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (item) {
+      item.classList.add("is-in");
+    });
+  }
+
+  var header = document.querySelector(".site-header");
+  var home = document.body.classList.contains("home");
+  var markScroll = function () {
+    if (header && home) header.classList.toggle("is-solid", window.scrollY > 28);
+    document.body.classList.toggle("scrolled", window.scrollY > 80);
+  };
+  markScroll();
+  window.addEventListener("scroll", markScroll, { passive: true });
+
+  document.querySelectorAll("[data-year]").forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
+
   var form = document.getElementById("booking-form");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -69,7 +105,7 @@
       var days = String(data.get("days") || "").trim();
       var message = String(data.get("message") || "").trim();
       var lines = [
-        "Hi PS Driving School, I would like to ask about driving lessons.",
+        "Hi Amazinglee Driving Academy, I would like to ask about driving lessons.",
         "Name: " + name,
         "Phone: " + phone,
         "Service: " + service
@@ -77,7 +113,7 @@
       if (email) lines.push("Email: " + email);
       if (days) lines.push("Preferred days: " + days);
       if (message) lines.push(message);
-      var url = "https://wa.me/27625005250?text=" + encodeURIComponent(lines.join("\n"));
+      var url = "https://wa.me/27780823498?text=" + encodeURIComponent(lines.join("\n"));
       var opened = window.open(url, "_blank", "noopener");
       if (!opened) window.location.href = url;
     });
