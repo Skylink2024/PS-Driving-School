@@ -69,7 +69,7 @@
       var days = String(data.get("days") || "").trim();
       var message = String(data.get("message") || "").trim();
       var lines = [
-        "Hi PS Driving School, I would like to ask about driving lessons.",
+        "Hi Amazinglee Driving Academy, I would like to ask about driving lessons.",
         "Name: " + name,
         "Phone: " + phone,
         "Service: " + service
@@ -77,7 +77,7 @@
       if (email) lines.push("Email: " + email);
       if (days) lines.push("Preferred days: " + days);
       if (message) lines.push(message);
-      var url = "https://wa.me/27625005250?text=" + encodeURIComponent(lines.join("\n"));
+      var url = "https://wa.me/27780823498?text=" + encodeURIComponent(lines.join("\n"));
       var opened = window.open(url, "_blank", "noopener");
       if (!opened) window.location.href = url;
     });

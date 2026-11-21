@@ -1,7 +1,5 @@
-# [PLACEHOLDER: production domain]
-# When the domain is confirmed, set Sitemap to the full URL, for example https://example.co.za/sitemap.xml
-
+# [PLACEHOLDER: production domain] Set Sitemap to the live absolute URL when ready.
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: sitemap.xml

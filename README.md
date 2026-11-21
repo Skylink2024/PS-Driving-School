@@ -1,32 +1,50 @@
-# PS Driving School
+# Amazinglee Driving Academy
 
-Static website for PS Driving School, KwaMashu, Durban. HTML, CSS and one JavaScript file. No build step and no server. Upload this folder to Hostinger `public_html` when the owner is ready. Do not deploy until the placeholders below are resolved or deliberately left visible.
+Static website for Amazinglee Driving Academy, Cape Town Southern Suburbs. HTML, CSS and one JavaScript file. No build step.
 
-Open it locally:
+This work is on the `amazinglee` branch. **Do not merge to `main` until you are ready.**
+
+## PS Driving School backup (retry)
+
+The previous PS Driving School site is preserved:
+
+- Branch: `ps-driving-school`
+- Tag: `ps-v1`
+- Also still on `main` until Amazinglee is merged
+
+To restore PS locally:
+
+```bash
+git checkout ps-driving-school
+```
+
+## Local preview
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Then visit `http://127.0.0.1:4173/`.
+Visit `http://127.0.0.1:4173/`.
 
-The booking form does not store anything. Submit opens WhatsApp (`https://wa.me/27625005250`) with the fields written into the message.
+The booking form does not store anything. Submit opens WhatsApp (`https://wa.me/27780823498`) with the fields in the message.
+
+## Published facts used
+
+- Name: Amazinglee Driving Academy
+- Slogan: Steering you in the right direction
+- Phone / WhatsApp: 078 082 3498 (+27 78 082 3498)
+- Email: shanmoogamsfamily@gmail.com
+- Website: https://amazinglee.co.za
+- Social handle: amazingleedriving
+- Location: Taranto, Cape Town Southern Suburbs, South Africa, 7798
+- Areas: Cape Town Southern Suburbs · Mitchell’s Plain Town Centre
+- Code 8 Manual & Automatic packages; Code 10 packages (from flyer)
+- BEE Level 1 · SADSOA · Terms and conditions apply
 
 ## Placeholder checklist
 
-These still need the owner. The same text appears on the pages, and again in HTML comments.
-
-- [PLACEHOLDER: production domain] — for canonical URLs, Open Graph, sitemap and robots.txt.
-- [PLACEHOLDER: confirm email — Facebook lists psdrivingschool01@gmail.com; the flyer shows psdrivingschool@gmail.com].
-- [PLACEHOLDER: confirm whether 53 Valleyview, Morningside is still a current address].
-- [PLACEHOLDER: confirm Instagram and TikTok profile URLs] (handles on the flyer are @psdrivingschool / psdrivingschool, not linked on the Facebook Page).
-- [PLACEHOLDER: confirm these are the prices effective 1 February 2026] (whether 03-pricelist.jpg is the updated list).
-- [PLACEHOLDER: Code 14 lesson and pickup prices — contact us for a quote].
-- [PLACEHOLDER: renewal and PDP process / fees if any, beyond the published lesson prices].
-- [PLACEHOLDER: lesson length in minutes, starting point for pickups, and what is included in a lesson].
-- [PLACEHOLDER: confirm which test centres they book] (Verulam is visible in photos; it may not be the only one).
-- [PLACEHOLDER: year established — poster shows EST’97].
-- [PLACEHOLDER: short about-the-owner paragraph and preferred first name, if they want it published].
-- [PLACEHOLDER: confirm map pin / plus code with the owner].
-- [PLACEHOLDER: if they use a booking calendar, replace the WhatsApp/mailto form].
-- [PLACEHOLDER: student first names or short quotes only if the owner provides written consent].
+- [PLACEHOLDER: production domain absolute URLs] — prefer amazinglee.co.za when live
+- [PLACEHOLDER: confirm exact street address / map pin]
+- [PLACEHOLDER: confirm opening hours]
+- [PLACEHOLDER: confirm Facebook / Instagram / TikTok profile URLs for amazingleedriving]
+- [PLACEHOLDER: learner’s licence / other services if offered beyond Code 8 and Code 10]
