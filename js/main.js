@@ -80,6 +80,10 @@
     });
   }
 
+  document.querySelectorAll("[data-year]").forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
+
   var form = document.getElementById("booking-form");
   if (form) {
     form.addEventListener("submit", function (event) {
